@@ -1,5 +1,18 @@
 # 📦 Releases
 
+## [v1.35] - 2025-11-03 (Hotfix)
+
+### 🔧 Critical Bug Fix
+**Download**: [BlenderRenderNanoBanana_v1.35.zip](BlenderRenderNanoBanana_v1.35.zip)
+
+- **Fixed**: `base64_data` variable name error that prevented AI image generation
+- **Issue**: API requests were failing due to undefined variable reference
+- **Solution**: Corrected variable name from `base64_data` to `image_data`
+
+**This is a critical hotfix - please update immediately if using v1.34**
+
+---
+
 ## [v1.34] - 2025-11-03
 
 ### 🍌 Blender Render Nano Banana v1.34 - AI Image Generation with Aspect Ratios

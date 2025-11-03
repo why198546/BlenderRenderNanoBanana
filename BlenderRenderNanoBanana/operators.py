@@ -798,7 +798,7 @@ Generate a photorealistic image that transforms the reference viewport into the 
                         {
                             "inline_data": {
                                 "mime_type": "image/png",
-                                "data": base64_data
+                                "data": image_data
                             }
                         }
                     ]
