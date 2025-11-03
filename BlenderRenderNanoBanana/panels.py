@@ -220,6 +220,27 @@ class NANOBANANA_PT_viewport_panel(Panel):
         # 快速提示词输入
         layout.separator()
         layout.prop(props, "image_prompt", text="", icon='GREASEPENCIL')
+        
+        # Prompt Enhancement和Aspect Ratio选项
+        layout.separator()
+        layout.label(text="AI Enhancement:", icon='MODIFIER')
+        
+        # Aspect Ratio
+        row = layout.row()
+        row.prop(props, "aspect_ratio", text="")
+        
+        # Prompt Style Template
+        row = layout.row()
+        row.prop(props, "prompt_style", text="")
+        
+        # 紧凑的高级选项
+        if current_service == 'IMAGE_TO_IMAGE' or current_service == 'BOTH':
+            col = layout.column(align=True)
+            col.scale_y = 0.8
+            
+            row = col.row()
+            row.prop(props, "lighting_style", text="")
+            row.prop(props, "camera_angle", text="")
 
 
 class NANOBANANA_PT_sidebar_panel(Panel):

@@ -1,5 +1,24 @@
 # 📦 Releases
 
+## [v1.36] - 2025-11-03 (UI Enhancement)
+
+### 🎨 Layout Workspace Panel Enhancement
+**Download**: [BlenderRenderNanoBanana_v1.36.zip](BlenderRenderNanoBanana_v1.36.zip)
+
+- **Added**: Aspect ratio selection to Layout workspace panel
+- **Added**: Prompt enhancement options (style templates) to Layout workspace panel
+- **Added**: Lighting and camera angle controls for image generation
+- **Improved**: Better compact layout for advanced AI controls
+- **UI**: Now all workspaces have consistent AI enhancement options
+
+**New Layout Panel Features**:
+- 🎭 Aspect Ratio dropdown (1:1 to 21:9 formats)
+- 🎨 Prompt Style Templates (Photorealistic, Artistic, Product, etc.)
+- 💡 Lighting Style controls (Natural, Studio, Cinematic, etc.)
+- 📷 Camera Angle options (Eye Level, Low Angle, Bird's Eye, etc.)
+
+---
+
 ## [v1.35] - 2025-11-03 (Hotfix)
 
 ### 🔧 Critical Bug Fix

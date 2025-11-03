@@ -1,17 +1,19 @@
 # 🚀 Quick Installation Guide
 
 ## Step 1: Download
-- **Latest Version**: [BlenderRenderNanoBanana_v1.35.zip](releases/BlenderRenderNanoBanana_v1.35.zip) ⭐ **Recommended**
-- **Previous Version**: [BlenderRenderNanoBanana_v1.34.zip](releases/BlenderRenderNanoBanana_v1.34.zip) ❌ *Has critical bug*
+- **Latest Version**: [BlenderRenderNanoBanana_v1.36.zip](releases/BlenderRenderNanoBanana_v1.36.zip) ⭐ **Recommended**
+- **Previous Versions**: 
+  - [v1.35.zip](releases/BlenderRenderNanoBanana_v1.35.zip) - Critical bug fix
+  - [v1.34.zip](releases/BlenderRenderNanoBanana_v1.34.zip) ❌ *Has critical bug*
 - **Alternative**: Visit [GitHub Releases](https://github.com/why198546/BlenderRenderNanoBanana/releases)
 
-> 🚨 **Important**: Use v1.35 or later. v1.34 has a critical bug that prevents AI image generation.
+> 🎨 **New in v1.36**: Layout workspace panel now includes aspect ratio and prompt enhancement options!
 
 ## Step 2: Install in Blender
 1. Open **Blender 4.5+**
 2. Go to **Edit** → **Preferences** → **Add-ons**
 3. Click **"Install..."** button
-3. Select the downloaded `BlenderRenderNanoBanana_v1.35.zip` file
+3. Select the downloaded `BlenderRenderNanoBanana_v1.36.zip` file
 5. **Enable** the checkbox next to "Render: Nano Banana Renderer"
 
 ## Step 3: Get API Key
