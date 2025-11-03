@@ -5,7 +5,7 @@ Nano Banana AI Renderer - Blender plugin for Google Gemini 2.5 Flash Image
 bl_info = {
     "name": "Nano Banana AI Renderer",
     "author": "Assistant",
-    "version": (1, 3, 8),
+    "version": (1, 3, 9),
     "blender": (3, 0, 0),
     "location": "Render Properties > Nano Banana Renderer",
     "description": "AI-powered rendering using Google Gemini 2.5 Flash Image",
