@@ -33,7 +33,7 @@
 
 ### Installation
 
-1. **Download the latest release** from the [Releases page](../../releases)
+1. **Download the latest release** from the [Releases page](https://github.com/why198546/BlenderRenderNanoBanana/releases) or [releases folder](releases/)
 2. **Install in Blender**:
    - Open Blender → Edit → Preferences → Add-ons
    - Click "Install..." and select the downloaded `.zip` file
