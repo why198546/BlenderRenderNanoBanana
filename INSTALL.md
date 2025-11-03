@@ -1,20 +1,20 @@
 # 🚀 Quick Installation Guide
 
 ## Step 1: Download
-- **Latest Version**: [BlenderRenderNanoBanana_v1.37.zip](releases/BlenderRenderNanoBanana_v1.37.zip) ⭐ **Recommended**
+- **Latest Version**: [BlenderRenderNanoBanana_v1.38.zip](releases/BlenderRenderNanoBanana_v1.38.zip) ⭐ **Recommended - Critical Hotfix**
 - **Previous Versions**: 
+  - [v1.37.zip](releases/BlenderRenderNanoBanana_v1.37.zip) ❌ *Has import bug - do not use*
   - [v1.36.zip](releases/BlenderRenderNanoBanana_v1.36.zip) - Layout panel enhancements
   - [v1.35.zip](releases/BlenderRenderNanoBanana_v1.35.zip) - Critical bug fix
-  - [v1.34.zip](releases/BlenderRenderNanoBanana_v1.34.zip) ❌ *Has critical bug*
 - **Alternative**: Visit [GitHub Releases](https://github.com/why198546/BlenderRenderNanoBanana/releases)
 
-> 🖼️ **New in v1.37**: Improved image display with large, centered popup windows and better user experience!
+> � **v1.38 Hotfix**: Fixed critical import error from v1.37 that prevented plugin installation!
 
 ## Step 2: Install in Blender
 1. Open **Blender 4.5+**
 2. Go to **Edit** → **Preferences** → **Add-ons**
 3. Click **"Install..."** button
-3. Select the downloaded `BlenderRenderNanoBanana_v1.37.zip` file
+3. Select the downloaded `BlenderRenderNanoBanana_v1.38.zip` file
 5. **Enable** the checkbox next to "Render: Nano Banana Renderer"
 
 ## Step 3: Get API Key

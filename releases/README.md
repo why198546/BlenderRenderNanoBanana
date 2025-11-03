@@ -1,9 +1,26 @@
 # 📦 Releases
 
-## [v1.37] - 2025-11-03 (Image Display Enhancement)
+## [v1.38] - 2025-11-03 (Critical Hotfix)
+
+### 🔧 Module Import Error Fix
+**Download**: [BlenderRenderNanoBanana_v1.38.zip](BlenderRenderNanoBanana_v1.38.zip) ⭐ **RECOMMENDED**
+
+- **Fixed**: Module import error `'NANOBANANA_OT_save_image' attribute not found`
+- **Issue**: __all__ list was defined before class definitions
+- **Solution**: Moved __all__ export list to end of file after all class definitions
+- **Status**: Critical fix for v1.37 installation issues
+
+**What's Fixed**:
+- ✅ Plugin now loads correctly in Blender preferences
+- ✅ All operators properly exported and accessible
+- ✅ No more "has no attribute" errors during installation
+
+---
+
+## [v1.37] - 2025-11-03 (Image Display Enhancement) ❌ **HAS IMPORT BUG**
 
 ### 🖼️ Improved Image Popup Display
-**Download**: [BlenderRenderNanoBanana_v1.37.zip](BlenderRenderNanoBanana_v1.37.zip) (28.6 KB)
+**Download**: [BlenderRenderNanoBanana_v1.37.zip](BlenderRenderNanoBanana_v1.37.zip) ⚠️ **NOT RECOMMENDED - USE v1.38**
 
 - **Added**: Large, centered popup window for generated images
 - **Added**: Automatic image size calculation (max 800x600, maintains aspect ratio)

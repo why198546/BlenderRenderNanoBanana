@@ -1995,18 +1995,6 @@ class NANOBANANA_OT_render_animation(Operator):
         return {'FINISHED'}
 
 
-# Export all operator classes
-__all__ = [
-    'NANOBANANA_OT_api_key_dialog',
-    'NANOBANANA_OT_setup_api',
-    'NANOBANANA_OT_capture_viewport',
-    'NANOBANANA_OT_render_viewport',
-    'NANOBANANA_OT_render_animation',
-    'NANOBANANA_OT_save_image',
-    'NANOBANANA_OT_view_in_editor',
-]
-
-
 class NANOBANANA_OT_save_image(bpy.types.Operator):
     """Save the generated image to file"""
     bl_idname = "nano_banana.save_image"
@@ -2068,3 +2056,15 @@ class NANOBANANA_OT_view_in_editor(bpy.types.Operator):
             self.report({'ERROR'}, "图片不存在")
         
         return {'FINISHED'}
+
+
+# Export all operator classes
+__all__ = [
+    'NANOBANANA_OT_api_key_dialog',
+    'NANOBANANA_OT_setup_api',
+    'NANOBANANA_OT_capture_viewport',
+    'NANOBANANA_OT_render_viewport',
+    'NANOBANANA_OT_render_animation',
+    'NANOBANANA_OT_save_image',
+    'NANOBANANA_OT_view_in_editor',
+]
