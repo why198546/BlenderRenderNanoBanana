@@ -1734,7 +1734,7 @@ Generate a photorealistic image that transforms the reference viewport into the 
         bpy.context.window_manager.popup_menu(draw, title="AI Rendering Result", icon='INFO')
     
     def show_image_in_editor(self, context, image):
-        """Show the generated image in Blender's Image Editor"""
+        """Show the generated image in Blender's Image Editor and popup"""
         try:
             # Find or create an Image Editor area
             image_editor_area = None
@@ -1767,8 +1767,81 @@ Generate a photorealistic image that transforms the reference viewport into the 
                 # Copy the AI generated image to render result
                 self.copy_image_to_render_result(image, render_result)
             
+            # Show popup with image preview
+            self.show_image_popup(context, image)
+            
         except Exception as e:
             print(f"Error displaying image: {e}")
+    
+    def show_image_popup(self, context, image):
+        """Show a large, centered popup with the generated image"""
+        def draw_popup(self, context):
+            layout = self.layout
+            layout.scale_y = 1.2
+            
+            # Image dimensions
+            img_width, img_height = image.size
+            
+            # Calculate display size (max 800x600, maintaining aspect ratio)
+            max_width = 800
+            max_height = 600
+            
+            if img_width > max_width or img_height > max_height:
+                # Scale down while maintaining aspect ratio
+                scale_w = max_width / img_width
+                scale_h = max_height / img_height
+                scale = min(scale_w, scale_h)
+                display_width = int(img_width * scale)
+                display_height = int(img_height * scale)
+            else:
+                display_width = img_width
+                display_height = img_height
+            
+            # Title
+            row = layout.row()
+            row.alignment = 'CENTER'
+            row.label(text="🎨 AI生成结果", icon='IMAGE_DATA')
+            
+            layout.separator()
+            
+            # Image info
+            info_row = layout.row()
+            info_row.alignment = 'CENTER'
+            info_row.label(text=f"图片尺寸: {img_width} x {img_height} 像素")
+            
+            layout.separator()
+            
+            # Image display - use template_preview for better display
+            col = layout.column(align=True)
+            col.scale_x = max(1.0, display_width / 200)  # Scale UI element
+            col.scale_y = max(1.0, display_height / 200)
+            
+            # Preview the image
+            col.template_preview(image, show_buttons=False)
+            
+            layout.separator()
+            
+            # Action buttons
+            button_row = layout.row(align=True)
+            button_row.alignment = 'CENTER'
+            
+            # Save button
+            save_op = button_row.operator("nano_banana.save_image", text="💾 保存图片", icon='FILE_IMAGE')
+            save_op.image_name = image.name
+            
+            # View in Image Editor button
+            view_op = button_row.operator("nano_banana.view_in_editor", text="👁️ 在图像编辑器中查看", icon='IMAGE_COL')
+            view_op.image_name = image.name
+        
+        # Calculate popup size based on image
+        popup_width = min(850, max(400, image.size[0] + 100))
+        
+        bpy.context.window_manager.popup_menu(
+            draw_popup, 
+            title="NanoBanana AI渲染完成", 
+            icon='RENDER_RESULT',
+            width=popup_width
+        )
     
     def copy_image_to_render_result(self, source_image, target_image):
         """Copy AI generated image to render result slot"""
@@ -1929,4 +2002,69 @@ __all__ = [
     'NANOBANANA_OT_capture_viewport',
     'NANOBANANA_OT_render_viewport',
     'NANOBANANA_OT_render_animation',
+    'NANOBANANA_OT_save_image',
+    'NANOBANANA_OT_view_in_editor',
 ]
+
+
+class NANOBANANA_OT_save_image(bpy.types.Operator):
+    """Save the generated image to file"""
+    bl_idname = "nano_banana.save_image"
+    bl_label = "Save Image"
+    bl_options = {'REGISTER'}
+    
+    image_name: bpy.props.StringProperty(name="Image Name")
+    
+    def execute(self, context):
+        if self.image_name and self.image_name in bpy.data.images:
+            image = bpy.data.images[self.image_name]
+            
+            # Use the save method from main operator
+            main_op = NANOBANANA_OT_render_with_ai()
+            main_op.save_result_image(image)
+            
+            self.report({'INFO'}, f"图片已保存: {self.image_name}")
+        else:
+            self.report({'ERROR'}, "图片不存在")
+        
+        return {'FINISHED'}
+
+
+class NANOBANANA_OT_view_in_editor(bpy.types.Operator):
+    """View image in Image Editor"""
+    bl_idname = "nano_banana.view_in_editor"
+    bl_label = "View in Image Editor"
+    bl_options = {'REGISTER'}
+    
+    image_name: bpy.props.StringProperty(name="Image Name")
+    
+    def execute(self, context):
+        if self.image_name and self.image_name in bpy.data.images:
+            image = bpy.data.images[self.image_name]
+            
+            # Find or create an Image Editor area
+            for area in context.screen.areas:
+                if area.type == 'IMAGE_EDITOR':
+                    for space in area.spaces:
+                        if space.type == 'IMAGE_EDITOR':
+                            space.image = image
+                            area.tag_redraw()
+                            break
+                    break
+            else:
+                # No Image Editor found, try to create one
+                for area in context.screen.areas:
+                    if area.type in ['TEXT_EDITOR', 'CONSOLE', 'INFO']:
+                        area.type = 'IMAGE_EDITOR'
+                        for space in area.spaces:
+                            if space.type == 'IMAGE_EDITOR':
+                                space.image = image
+                                area.tag_redraw()
+                                break
+                        break
+            
+            self.report({'INFO'}, f"在图像编辑器中显示: {self.image_name}")
+        else:
+            self.report({'ERROR'}, "图片不存在")
+        
+        return {'FINISHED'}

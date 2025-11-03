@@ -1,5 +1,27 @@
 # 📦 Releases
 
+## [v1.37] - 2025-11-03 (Image Display Enhancement)
+
+### 🖼️ Improved Image Popup Display
+**Download**: [BlenderRenderNanoBanana_v1.37.zip](BlenderRenderNanoBanana_v1.37.zip) (28.6 KB)
+
+- **Added**: Large, centered popup window for generated images
+- **Added**: Automatic image size calculation (max 800x600, maintains aspect ratio)
+- **Added**: Enhanced popup UI with image information display
+- **Added**: Direct save and view buttons in popup window
+- **Improved**: Better image preview experience with emoji icons
+- **UI**: Smart window sizing based on image dimensions
+
+**New Image Display Features**:
+- 🎨 Large centered popup showing full AI-generated image
+- 📐 Automatic sizing with aspect ratio preservation
+- 💾 Direct save button in popup window
+- 👁️ One-click view in Image Editor
+- 📊 Image dimension information display
+- 🎯 Improved user experience for viewing results
+
+---
+
 ## [v1.36] - 2025-11-03 (UI Enhancement)
 
 ### 🎨 Layout Workspace Panel Enhancement

@@ -5,7 +5,7 @@ Nano Banana AI Renderer - Blender plugin for Google Gemini 2.5 Flash Image
 bl_info = {
     "name": "Nano Banana AI Renderer",
     "author": "Assistant",
-    "version": (1, 3, 6),
+    "version": (1, 3, 7),
     "blender": (3, 0, 0),
     "location": "Render Properties > Nano Banana Renderer",
     "description": "AI-powered rendering using Google Gemini 2.5 Flash Image",
@@ -225,6 +225,8 @@ classes = (
     # operators.NANOBANANA_OT_capture_viewport,  # 暂时禁用以解决导入问题
     operators.NANOBANANA_OT_render_viewport,  # 主要的渲染operator
     operators.NANOBANANA_OT_render_animation,
+    operators.NANOBANANA_OT_save_image,  # 保存图片操作符
+    operators.NANOBANANA_OT_view_in_editor,  # 在图像编辑器中查看操作符
     NANOBANANA_OT_test_render,
     panels.NANOBANANA_PT_render_panel,  # 渲染属性面板
     panels.NANOBANANA_PT_viewport_panel,  # 3D视口面板
