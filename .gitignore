@@ -1,0 +1,52 @@
+# Blender
+*.blend1
+*.blend2
+*.blend3
+*.blend4
+*.blend5
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Blender addon specific
+*.zip
+!releases/*.zip
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Testing
+test_*.py
+debug_*.json
+extracted_image_*.png
+
+# API Keys (security)
+config.json
+api_key.txt
+*.key
+
+# Output directories
+NanoBanana/
+output/
+renders/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
